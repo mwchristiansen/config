@@ -39,6 +39,33 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 set mouse=a
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = [
+      \'\.DS_Store$',
+      \'\.bundle$',
+      \'\.capistrano$',
+      \'\.git$',
+      \'\.gitkeep$',
+      \'\.keep$',
+      \'\.routes$',
+      \'\.sass-cache$',
+      \'\.swo$',
+      \'\.swp$',
+      \'tags$'
+      \]
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+let g:NERDTreeShowIgnoredStatus = 1
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
